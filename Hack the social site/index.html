@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Post Creator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="container">
+                <h1 class="header__title">📱 Social Media Post Creator</h1>
+                <p class="header__subtitle">Create engaging posts for all your social platforms</p>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="container">
+                <div class="layout">
+                    <!-- Platform Selection Sidebar -->
+                    <aside class="sidebar">
+                        <div class="card">
+                            <div class="card__body">
+                                <h3 class="sidebar__title">Select Platforms</h3>
+                                <div class="platform-list" id="platformList">
+                                    <!-- Platform checkboxes will be dynamically generated -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card__body">
+                                <h3 class="sidebar__title">Best Times to Post</h3>
+                                <div class="best-times" id="bestTimes">
+                                    <p class="text-secondary">Select platforms to see optimal posting times</p>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- Main Content Area -->
+                    <div class="content">
+                        <!-- Post Composer -->
+                        <div class="card composer">
+                            <div class="card__body">
+                                <div class="composer__header">
+                                    <h2>Create Your Post</h2>
+                                    <div class="composer__actions">
+                                        <button class="btn btn--outline btn--sm" id="saveDraftBtn">💾 Save Draft</button>
+                                        <button class="btn btn--outline btn--sm" id="clearBtn">🗑️ Clear</button>
+                                    </div>
+                                </div>
+
+                                <div class="composer__body">
+                                    <textarea 
+                                        class="form-control composer__textarea" 
+                                        id="postContent" 
+                                        placeholder="What's on your mind? Share your thoughts..."
+                                        rows="6"
+                                    ></textarea>
+
+                                    <div class="composer__toolbar">
+                                        <div class="toolbar__section">
+                                            <button class="btn btn--outline btn--sm" id="boldBtn">🔸 Bold</button>
+                                            <button class="btn btn--outline btn--sm" id="italicBtn">◦ Italic</button>
+                                            <button class="btn btn--outline btn--sm" id="hashtagBtn"># Hashtag</button>
+                                            <button class="btn btn--outline btn--sm" id="emojiBtn">😊 Emoji</button>
+                                        </div>
+                                        <div class="character-count" id="characterCount">
+                                            <span class="char-current">0</span> characters
+                                        </div>
+                                    </div>
+
+                                    <!-- Character Limits Display -->
+                                    <div class="character-limits" id="characterLimits">
+                                        <!-- Will be populated dynamically -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hashtag Suggestions -->
+                        <div class="card hashtag-suggestions" id="hashtagSuggestions" style="display: none;">
+                            <div class="card__body">
+                                <h3>Suggested Hashtags</h3>
+                                <div class="hashtag-list" id="hashtagList">
+                                    <!-- Will be populated dynamically -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Emoji Picker -->
+                        <div class="card emoji-picker" id="emojiPicker" style="display: none;">
+                            <div class="card__body">
+                                <h3>Add Emoji</h3>
+                                <div class="emoji-categories" id="emojiCategories">
+                                    <!-- Will be populated dynamically -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Post Preview -->
+                        <div class="card preview">
+                            <div class="card__body">
+                                <div class="preview__header">
+                                    <h3>Post Preview</h3>
+                                    <div class="preview__actions">
+                                        <button class="btn btn--outline btn--sm" id="copyBtn">📋 Copy</button>
+                                        <button class="btn btn--primary" id="postBtn">🚀 Post Now</button>
+                                    </div>
+                                </div>
+
+                                <div class="preview__platforms" id="previewPlatforms">
+                                    <p class="text-secondary">Select platforms to see preview</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Saved Drafts -->
+                        <div class="card drafts">
+                            <div class="card__body">
+                                <h3>Saved Drafts</h3>
+                                <div class="draft-list" id="draftList">
+                                    <p class="text-secondary">No saved drafts yet</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal hidden" id="successModal">
+        <div class="modal__backdrop">
+            <div class="modal__content">
+                <div class="modal__header">
+                    <h3>🎉 Post Published Successfully!</h3>
+                </div>
+                <div class="modal__body">
+                    <p>Your post has been successfully published to the selected platforms:</p>
+                    <div class="published-platforms" id="publishedPlatforms">
+                        <!-- Will be populated dynamically -->
+                    </div>
+                    <div class="posting-progress" id="postingProgress">
+                        <!-- Will show progress animation -->
+                    </div>
+                </div>
+                <div class="modal__footer">
+                    <button class="btn btn--primary" id="closeModalBtn">Create New Post</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

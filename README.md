@@ -2,7 +2,10 @@
 
 > A modern web application that simplifies social media management by allowing users to create, preview, and manage posts across multiple platforms from a single interface.
 
-[Live Demo](https://socialmediaposter.netlify.app/)
+#[Live Demo](https://socialmediaposter.netlify.app/)
+>
+#Preview
+<img width="1895" height="922" alt="image" src="https://github.com/user-attachments/assets/df9cefb7-ef91-4145-8d15-d723fa1eddb7" />
 - **📊 Smart Character Counting**: Real-time character limits for each platform
 - **👁️ Live Preview**: See how your posts will appear on different platforms
 - **⏰ Optimal Timing**: Get best time recommendations for each platform
